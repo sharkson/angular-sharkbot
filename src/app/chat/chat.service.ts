@@ -37,6 +37,12 @@ export class ChatService {
     var chat = new Chat('sharkbot', msg, userName, Date.now().toString());
     var chatRequest = new ChatRequest(chat, 'test', this.conversationName);
 
-    return this.http.put(API_URL, chatRequest).subscribe((res) => this.update(new Message(res.json().response, 'sharkbot')));
+    return this.http.put(API_URL + 'api/chat', chatRequest).subscribe((res) => {
+      var response = res.json().response;
+      var chatUpdate = new Chat('sharkbot', response, 'sharkbot', Date.now().toString());
+      var chatUpdateRequest = new ChatRequest(chatUpdate, 'test', this.conversationName);
+      this.http.put(API_URL + 'api/chatupdate', chatUpdateRequest).subscribe();
+      this.update(new Message(response, 'sharkbot'));
+    });
   }
 }
