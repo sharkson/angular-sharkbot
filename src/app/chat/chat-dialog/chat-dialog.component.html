@@ -1,0 +1,18 @@
+<h1>sharkbot live chat</h1>
+
+<ng-container *ngFor="let message of messages | async">
+  <div class="message" [ngClass]="{'from': message.sentBy === 'sharkbot',
+       'to': message.sentBy === 'user'}">
+    {{message.content}}
+  </div>
+
+</ng-container>
+
+<div class="row">
+  <label *ngIf="!editName" (click)="editName = true" class="line-height-2p5">{{userName}}</label>
+  <input *ngIf="editName" [(ngModel)]="userName" (keyup.enter)="editName = false" type="text" />
+  <button *ngIf="editName" (click)="editName = false">ok</button>
+
+  <input [(ngModel)]="formValue" (keyup.enter)="sendMessage()" type="text" placeholder="chat with sharkbot" />
+  <button (click)="sendMessage()">Send</button>
+</div>
