@@ -1,6 +1,6 @@
 # angular-sharkbot
 
-An angular front-end for the sharkbot chatbot API
+An angular front-end for the sharkbot chatbot API.  Live Chat with sharkbot and import conversations.  
 
 ## Setup
 
