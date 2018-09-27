@@ -1,0 +1,37 @@
+label {
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.align-right {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.messages {
+  color: white;
+}
+
+.chat-username {
+  color: rgb(217, 224, 33);
+}
+.messages div:nth-child(even) .chat-username {
+  color: #009cdd;
+}
+
+.messages div:nth-child(odd) {
+  background-color: black;
+}
+.messages div:nth-child(even) {
+  background-color: rgb(51, 51, 51);
+}
+
+.line-height-2p5 {
+  line-height: 2.5;
+}
+
+.margin-left-right {
+  margin-left: 1em;
+  margin-right: 1em;
+}

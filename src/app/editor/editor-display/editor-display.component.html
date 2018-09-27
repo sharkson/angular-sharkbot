@@ -1,0 +1,32 @@
+<div class="row">
+  <label *ngIf="!editConversationName" (click)="editConversationName = true" class="line-height-2p5 margin-left-right">{{conversationName}}</label>
+  <input *ngIf="editConversationName" [(ngModel)]="conversationName" (keyup.enter)="editConversationName = false" type="text" />
+  <button *ngIf="editConversationName" (click)="editConversationName = false">ok</button>
+
+  <div class="align-right"><button (click)="saveConversation()">Save</button><button (click)="sendConversation()">Send</button></div>
+</div>
+
+<div class="messages">
+  <ng-container *ngFor="let analyzedChat of messages">
+    <div class="message">
+      <span class="chat-username">{{analyzedChat.chat.user}}: </span><span class="chat-message">{{analyzedChat.chat.message}}</span>
+    </div>
+  </ng-container>
+</div>
+
+<div class="row">
+  <label *ngIf="!editName" (click)="editName = true" class="line-height-2p5 margin-left-right">{{userName}}</label>
+  <input *ngIf="editName" [(ngModel)]="userName" (keyup.enter)="editName = false" type="text" />
+  <button *ngIf="editName" (click)="editName = false">ok</button>
+
+  <input [(ngModel)]="formValue" (keyup.enter)="sendMessage()" type="text" placeholder="add message" />
+  <button (click)="sendMessage()">Add</button>
+</div>
+<div class="row">
+  <label *ngIf="!editName2" (click)="editName2 = true" class="line-height-2p5 margin-left-right">{{userName2}}</label>
+  <input *ngIf="editName2" [(ngModel)]="userName2" (keyup.enter)="editName2 = false" type="text" />
+  <button *ngIf="editName2" (click)="editName2 = false">ok</button>
+
+  <input [(ngModel)]="formValue2" (keyup.enter)="sendMessage2()" type="text" placeholder="add message" />
+  <button (click)="sendMessage2()">Add</button>
+</div>

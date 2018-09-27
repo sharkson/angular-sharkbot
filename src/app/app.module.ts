@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 
 import { ChatModule } from './chat/chat.module';
 import { ConversationModule } from './conversation/conversation.module';
+import { EditorModule } from './editor/editor.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ConversationModule } from './conversation/conversation.module';
     BrowserModule,
     AppRoutingModule,
     ChatModule,
-    ConversationModule
+    ConversationModule,
+    EditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
